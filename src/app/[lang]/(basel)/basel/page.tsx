@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import BaselHomeClient from './basel-home-client';
 
 export const metadata: Metadata = {
@@ -7,6 +8,10 @@ export const metadata: Metadata = {
 
 export default function BaselHomePage({ params }: { params: any }) {
   const lang = params?.lang ?? 'en';
-  return <BaselHomeClient lang={lang} />;
+  return (
+    <Suspense fallback={<div className="py-10 text-center">Loading...</div>}>
+      <BaselHomeClient lang={lang} />
+    </Suspense>
+  );
 }
 

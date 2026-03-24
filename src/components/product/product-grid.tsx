@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Suspense } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Alert from '@components/ui/alert';
@@ -23,7 +24,7 @@ interface ProductGridProps {
   emptyMessage?: string;
 }
 
-export const ProductGrid: FC<ProductGridProps> = ({
+const ProductGridInner: FC<ProductGridProps> = ({
   className = '',
   lang,
   onCountChange,
@@ -287,5 +288,24 @@ export const ProductGrid: FC<ProductGridProps> = ({
         )
       ) : null}
     </>
+  );
+};
+
+export const ProductGrid: FC<ProductGridProps> = (props) => {
+  return (
+    <Suspense
+      fallback={
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 gap-3 md:gap-4 2xl:gap-5">
+          {Array.from({ length: 10 }).map((_, idx) => (
+            <ProductCardLoader
+              key={`product-suspense-loader-${idx}`}
+              uniqueKey={`product-suspense-loader-${idx}`}
+            />
+          ))}
+        </div>
+      }
+    >
+      <ProductGridInner {...props} />
+    </Suspense>
   );
 };

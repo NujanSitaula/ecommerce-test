@@ -7,6 +7,7 @@ import ManagedDrawer from '@components/common/drawer/managed-drawer';
 import { Metadata } from 'next';
 import ToasterProvider from 'src/app/provider/toaster-provider';
 import Providers from 'src/app/provider/provider';
+import { Suspense } from 'react';
 
 // external
 import 'react-toastify/dist/ReactToastify.css';
@@ -63,7 +64,9 @@ export default async function RootLayout({
       >
         <Providers>
           <ManagedUIContext>
-            {children}
+            <Suspense fallback={<div className="py-10 text-center">Loading...</div>}>
+              {children}
+            </Suspense>
             <ManagedModal lang={lang} />
             <ManagedDrawer lang={lang} />
             <ToasterProvider />
