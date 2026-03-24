@@ -1,0 +1,14 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-duplicate-imports": "warn",
+    "import/no-unresolved": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"]
+    }
+  ]
+}

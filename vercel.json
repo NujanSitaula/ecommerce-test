@@ -1,0 +1,16 @@
+{
+  "env": {
+    "NEXT_PUBLIC_REST_API_ENDPOINT": "https://borobazar.vercel.app/api",
+    "NEXT_PUBLIC_SITE_URL": "https://borobazar.vercel.app/",
+    "NEXT_PUBLIC_STRIPE_PUBLIC_KEY": "Put your stripe public key here",
+    "NEXT_PUBLIC_GOOGLE_API_KEY": "Put your google api key here"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_REST_API_ENDPOINT": "https://borobazar.vercel.app/api",
+      "NEXT_PUBLIC_SITE_URL": "https://borobazar.vercel.app/",
+      "NEXT_PUBLIC_STRIPE_PUBLIC_KEY": "Put your stripe public key here",
+      "NEXT_PUBLIC_GOOGLE_API_KEY": "Put your google api key here"
+    }
+  }
+}
