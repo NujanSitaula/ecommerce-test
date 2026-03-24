@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-
 module.exports = {
   reactStrictMode: true,
   ...(process.env.NODE_ENV === 'production' && {
@@ -56,6 +55,26 @@ module.exports = {
         protocol: 'http',
         hostname: '127.0.0.1',
         port: '8000',
+        pathname: '/uploads/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'tl95p9j8qa65jkolcp9frlqm.35.225.205.38.sslip.io',
+        pathname: '/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'tl95p9j8qa65jkolcp9frlqm.35.225.205.38.sslip.io',
+        pathname: '/uploads/**',
+      },
+      {
+        protocol: 'http',
+        hostname: '**.35.225.205.38.sslip.io',
+        pathname: '/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.35.225.205.38.sslip.io',
         pathname: '/uploads/**',
       },
     ],
