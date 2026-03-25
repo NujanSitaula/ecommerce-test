@@ -58,23 +58,8 @@ module.exports = {
         pathname: '/uploads/**',
       },
       {
-        protocol: 'http',
-        hostname: 'tl95p9j8qa65jkolcp9frlqm.35.225.205.38.sslip.io',
-        pathname: '/uploads/**',
-      },
-      {
         protocol: 'https',
-        hostname: 'tl95p9j8qa65jkolcp9frlqm.35.225.205.38.sslip.io',
-        pathname: '/uploads/**',
-      },
-      {
-        protocol: 'http',
-        hostname: '**.35.225.205.38.sslip.io',
-        pathname: '/uploads/**',
-      },
-      {
-        protocol: 'https',
-        hostname: '**.35.225.205.38.sslip.io',
+        hostname: 'api.shufflee.co',
         pathname: '/uploads/**',
       },
     ],
